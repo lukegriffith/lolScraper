@@ -21,6 +21,7 @@ with open(directory + 't3.json', 'w') as outfile:
 for post in t3.get('data').get('children'):
     url = post.get('data').get('url')
     postID = post.get('data').get('id')
+    time.sleep(1.5)
     comments = lol.loadComments(url)
     with open(directory + postID + '.json', 'w') as outfile:
         json.dump(comments, outfile)
